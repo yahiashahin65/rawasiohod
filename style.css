@@ -1,77 +1,47 @@
-/* 1. الأساسيات */
 :root {
     --gold: #D4AF37;
     --dark: #0A0A0A;
-    --gray: #161616;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
 body { background: var(--dark); color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
 
-/* 2. الهيدر واللوجو - صلحنا السواد هنا */
+/* إصلاح الهيدر واللوجو */
 header {
-    position: fixed; top: 0; width: 100%; height: 80px;
+    position: fixed; top: 0; width: 100%; height: 90px;
     display: flex; justify-content: space-between; align-items: center;
-    padding: 0 8%; background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px); z-index: 1000;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    transition: 0.3s;
+    padding: 0 5%; background: rgba(0, 0, 0, 0.95);
+    z-index: 10000; border-bottom: 2px solid var(--gold);
 }
 
-.logo { display: flex; align-items: center; gap: 12px; }
-.main-logo { height: 50px; width: auto; object-fit: contain; filter: drop-shadow(0 0 5px rgba(212,175,55,0.4)); }
-.logo-text { font-size: 24px; font-weight: 900; color: #fff; }
-.gold-dot { color: var(--gold); }
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.main-logo { height: 65px !important; width: auto; object-fit: contain; }
+.logo-text { display: flex; flex-direction: column; }
+.logo-text span { font-size: 18px; font-weight: 900; color: #fff; line-height: 1.1; }
+.gold-dot { color: var(--gold) !important; font-size: 14px !important; }
 
-nav ul { display: flex; list-style: none; gap: 25px; }
-nav ul li a { text-decoration: none; color: #fff; font-size: 15px; font-weight: 700; transition: 0.3s; }
-nav ul li a:hover { color: var(--gold); }
+nav ul { display: flex; list-style: none; gap: 15px; }
+nav ul li a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; white-space: nowrap; }
 
-/* 3. الهيرو - الإضاءة المظبوطة */
+/* الموبايل - منع التداخل */
+@media (max-width: 600px) {
+    header { height: 80px; padding: 0 3%; }
+    .main-logo { height: 50px !important; }
+    .logo-text span { font-size: 14px; }
+    nav ul { gap: 8px; }
+    nav ul li a { font-size: 12px; }
+}
+
+/* الأقسام */
 .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.45; }
-
-.main-title { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; margin-bottom: 15px; }
-.highlight { color: var(--gold); }
-
-.hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
-.btn-primary { background: var(--gold); color: #000; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-.btn-secondary { border: 1px solid var(--gold); color: var(--gold); padding: 12px 30px; border-radius: 8px; text-decoration: none; }
-.btn-primary:hover { background: #fff; transform: scale(1.05); }
-
-/* 4. الأقسام */
-.container { padding: 80px 8%; }
-.section-label { color: var(--gold); text-align: center; margin-bottom: 50px; font-size: 2.2rem; }
-
+.hero-bg img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: -1; }
+.container { padding: 120px 5% 50px; }
+.section-label { color: var(--gold); text-align: center; margin-bottom: 40px; font-size: 2rem; }
 .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.gallery-item img { width: 100%; height: 280px; object-fit: cover; border-radius: 15px; border: 1px solid #333; transition: 0.4s; }
-.gallery-item img:hover { transform: scale(1.03); border-color: var(--gold); }
-
+.gallery-item img { width: 100%; height: 280px; object-fit: cover; border-radius: 15px; border: 1px solid #333; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.card { background: var(--gray); padding: 40px; border-radius: 20px; text-align: center; transition: 0.3s; border: 1px solid transparent; }
-.card:hover { transform: translateY(-10px); border-color: var(--gold); }
-.card-icon { font-size: 45px; color: var(--gold); margin-bottom: 20px; }
-
-.video-box { max-width: 850px; margin: 50px auto; border-radius: 20px; overflow: hidden; border: 2px solid var(--gold); }
-video { width: 100%; display: block; }
-
-/* 5. الفوتر والواتساب */
-.site-footer { padding: 60px; text-align: center; background: #050505; border-top: 1px solid #222; }
-.footer-icons a { color: var(--gold); font-size: 28px; margin: 0 15px; transition: 0.3s; display: inline-block; }
-.footer-icons a:hover { transform: translateY(-5px); color: #fff; }
-
-.whatsapp-fixed {
-    position: fixed; bottom: 30px; right: 30px;
-    background: #25D366; color: #fff !important;
-    padding: 12px 25px; border-radius: 50px;
-    display: flex; align-items: center; gap: 10px;
-    z-index: 9999; text-decoration: none; font-weight: 900;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
-
-@media (max-width: 768px) {
-    header { padding: 0 5%; }
-    .whatsapp-fixed span { display: none; }
-    .whatsapp-fixed { width: 60px; height: 60px; justify-content: center; border-radius: 50%; padding: 0; }
-}
+.card { background: #161616; padding: 30px; border-radius: 15px; text-align: center; }
+.card-icon { font-size: 40px; color: var(--gold); margin-bottom: 15px; }
+.whatsapp-fixed { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: #fff !important; padding: 12px 20px; border-radius: 50px; text-decoration: none; z-index: 9999; display: flex; align-items: center; gap: 8px; font-weight: bold; }
+.site-footer { padding: 40px; text-align: center; background: #000; border-top: 1px solid #222; }
+.footer-icons a { color: var(--gold); font-size: 24px; margin: 0 10px; }
