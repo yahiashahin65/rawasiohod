@@ -1,12 +1,10 @@
-/* 1. الأساسيات والخطوط */
+/* --- الإعدادات العامة --- */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
 
 :root {
     --gold: #D4AF37;
-    --dark: #0D0D0D;
-    --gray: #1A1A1A;
-    --text: #E0E0E0;
-    --header-height: 70px;
+    --dark: #0A0A0A;
+    --gray: #161616;
 }
 
 * {
@@ -18,164 +16,119 @@
 
 body {
     background-color: var(--dark);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden; /* عشان ما يظهرش شريط تمرير عرضي */
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* 2. الهيدر (Header) - رايق ومنظم */
+/* --- الهيدر الرايق --- */
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
+    top: 0; left: 0; width: 100%;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    background: rgba(13, 13, 13, 0.95);
+    background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    z-index: 2000;
 }
 
 .logo-text {
     font-size: 22px;
     font-weight: 900;
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
 .gold-dot { color: var(--gold); }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul li a { text-decoration: none; color: white; font-size: 14px; font-weight: 700; transition: 0.3s; }
+nav ul li a:hover { color: var(--gold); }
 
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--gold);
-}
-
-/* 3. واجهة الموقع (Hero Section) */
+/* --- فيديو الخلفية --- */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
     text-align: center;
-    padding-top: var(--header-height);
 }
 
-.hero-bg {
+.video-background {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: -1;
 }
 
-.hero-bg img {
+.video-background video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
 }
 
-.main-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 20px;
-    font-weight: 900;
+.video-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* تظليل للفيديو عشان الكلام يبان */
 }
 
+.main-title { font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; margin-bottom: 10px; }
 .highlight { color: var(--gold); }
 
-.hero-btns {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 25px;
-}
+.hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
 
-.btn-primary, .btn-secondary {
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    transition: 0.3s;
-}
+.btn-primary { background: var(--gold); color: #000; padding: 12px 28px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+.btn-secondary { border: 1px solid white; color: white; padding: 12px 28px; border-radius: 5px; text-decoration: none; transition: 0.3s; }
+.btn-secondary:hover { background: white; color: black; }
 
-.btn-primary { background: var(--gold); color: #000; }
-.btn-secondary { border: 1px solid var(--gold); color: var(--gold); }
+/* --- الكروت والخدمات --- */
+.container { padding: 80px 8%; }
+.section-label { text-align: center; color: var(--gold); font-size: 2rem; margin-bottom: 50px; }
 
-.btn-primary:hover { transform: scale(1.05); }
-
-/* 4. الأقسام (Services & Portfolio) */
-.container { padding: 60px 5%; }
-
-.section-label {
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 1.8rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
 .card {
     background: var(--gray);
-    padding: 30px;
-    border-radius: 12px;
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
     border: 1px solid transparent;
+    transition: 0.4s;
+}
+
+.card:hover { transform: translateY(-10px); border-color: var(--gold); }
+.card-icon { font-size: 40px; color: var(--gold); margin-bottom: 20px; }
+
+/* --- زر الواتساب (الإصلاح النهائي) --- */
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    z-index: 9999;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-.card:hover {
-    border-color: var(--gold);
-    transform: translateY(-5px);
-}
+.whatsapp-fixed:hover { transform: scale(1.1); }
 
-.card-icon {
-    font-size: 35px;
-    color: var(--gold);
-    margin-bottom: 15px;
+/* --- الجوال --- */
+@media (max-width: 768px) {
+    header { padding: 0 3%; }
+    nav ul { gap: 12px; }
+    nav ul li a { font-size: 11px; }
+    .hero-btns { flex-direction: column; gap: 10px; }
 }
-
-/* 5. معرض الصور والفيديو */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.video-box {
-    max-width: 800px;
-    margin: 40px auto;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--gold);
-}
-
-video { width:
