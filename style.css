@@ -38,8 +38,42 @@ nav ul li a:hover { color: var(--gold); }
 .gallery-item img { width: 100%; border-radius: 15px; border: 1px solid #333; transition: 0.4s; }
 .gallery-item:hover img { transform: translateY(-10px); border-color: var(--gold); }
 
-.video-container { margin: 60px auto 0; max-width: 800px; padding: 0 20px; }
-.video-container video { width: 100%; border-radius: 20px; border: 2px solid var(--gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1); }
+/* تنسيق حاوية الفيديو المحسن */
+.video-container { 
+    margin: 60px auto; 
+    max-width: 900px; /* العرض الأقصى للفيديو في الشاشات الكبيرة */
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container video { 
+    width: 100%; 
+    height: auto; /* يضمن عدم تمدد الفيديو بشكل طولي */
+    aspect-ratio: 16 / 9; /* يحافظ على أبعاد السينما للفيديو ومنع تشوهه */
+    border-radius: 20px; 
+    border: 2px solid var(--gold); 
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+    background-color: #000; /* خلفية سوداء للفيديو أثناء التحميل */
+    object-fit: cover; /* لضمان ملء المساحة بدون حواف سوداء داخلية إذا أمكن */
+}
+
+/* تعديل خاص للشاشات الكبيرة جداً */
+@media (min-width: 1200px) {
+    .video-container {
+        max-width: 1000px;
+    }
+}
+
+/* تعديل للموبايل لضمان عدم وجود مسافات كبيرة */
+@media (max-width: 768px) {
+    .video-container {
+        margin: 30px auto;
+    }
+    .video-container video {
+        border-radius: 12px;
+    }
+}
 
 /* الخدمات */
 .services { padding: 100px 0; background: #080808; }
