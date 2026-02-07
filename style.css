@@ -1,71 +1,181 @@
-/* --- تعديل الهيدر ليكون أقل زحمة --- */
+/* 1. الأساسيات والخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+:root {
+    --gold: #D4AF37;
+    --dark: #0D0D0D;
+    --gray: #1A1A1A;
+    --text: #E0E0E0;
+    --header-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden; /* عشان ما يظهرش شريط تمرير عرضي */
+}
+
+/* 2. الهيدر (Header) - رايق ومنظم */
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
+    height: var(--header-height);
     display: flex;
     justify-content: space-between;
-    align-items: center; /* سنترة العناصر عمودياً */
-    padding: 10px 5%; /* تقليل الارتفاع */
-    background: rgba(13, 13, 13, 0.9);
-    backdrop-filter: blur(8px);
-    z-index: 2000;
+    align-items: center;
+    padding: 0 5%;
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .logo-text {
-    font-size: 20px; /* تصغير الخط قليلاً */
+    font-size: 22px;
     font-weight: 900;
-    white-space: nowrap; /* منع النص من النزول لسطر جديد */
+    color: #fff;
+    text-decoration: none;
 }
+
+.gold-dot { color: var(--gold); }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px; /* مسافات متساوية بين اللينكات */
+    gap: 25px;
 }
 
 nav ul li a {
-    font-size: 13px; /* خط أنعم */
-    letter-spacing: 0.5px;
-}
-
-/* --- إصلاح زر الواتساب --- */
-.whatsapp-fixed {
-    position: fixed; /* يفضل ثابت مع السكرول */
-    bottom: 25px;
-    right: 25px;
-    background: #25D366;
-    color: white !important; /* التأكد إن اللون أبيض */
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
-    z-index: 9999; /* أعلى حاجة في الصفحة */
     text-decoration: none;
-    transition: 0.3s transform ease;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
 }
 
-.whatsapp-fixed:hover {
-    transform: scale(1.1) rotate(10deg); /* حركة دلع عند الوقوف عليه */
+nav ul li a:hover {
+    color: var(--gold);
 }
 
-/* --- حل مشكلة الزحمة في الموبايل --- */
-@media (max-width: 768px) {
-    header {
-        padding: 10px 3%;
-    }
-    nav ul {
-        gap: 10px; /* تقليل المسافات في الشاشات الصغيرة */
-    }
-    nav ul li a {
-        font-size: 11px;
-    }
-    .main-title {
-        font-size: 2rem; /* تصغير عنوان الموقع في الموبايل */
-    }
+/* 3. واجهة الموقع (Hero Section) */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    padding-top: var(--header-height);
 }
+
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.main-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.highlight { color: var(--gold); }
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-primary { background: var(--gold); color: #000; }
+.btn-secondary { border: 1px solid var(--gold); color: var(--gold); }
+
+.btn-primary:hover { transform: scale(1.05); }
+
+/* 4. الأقسام (Services & Portfolio) */
+.container { padding: 60px 5%; }
+
+.section-label {
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--gray);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 35px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+/* 5. معرض الصور والفيديو */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.video-box {
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--gold);
+}
+
+video { width:
