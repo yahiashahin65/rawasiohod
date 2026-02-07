@@ -1,10 +1,11 @@
+// تغيير خلفية الهيدر عند التمرير فقط
 window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(13, 13, 13, 0.98)';
-        header.style.height = '70px';
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+        navbar.style.height = '70px';
     } else {
-        header.style.background = 'rgba(13, 13, 13, 0.9)';
-        header.style.height = '80px';
+        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+        navbar.style.height = '80px';
     }
 });
