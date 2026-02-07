@@ -1,0 +1,124 @@
+:root {
+    --gold: #d4af37;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-white: #ffffff;
+}
+
+* { box-sizing: border-box; transition: all 0.3s ease; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img { height: 50px; }
+
+nav ul { display: flex; list-style: none; padding: 0; }
+nav ul li { margin-right: 25px; }
+nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+nav ul li a:hover { color: var(--gold); }
+
+/* Hero Slider */
+.slider { height: 100vh; overflow: hidden; }
+.slide { 
+    height: 100%; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+}
+
+.glow-text {
+    font-size: 3.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--gold);
+    color: black;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* Sections */
+.section { padding: 80px 5%; }
+.section-title { text-align: center; color: var(--gold); font-size: 2.5rem; margin-bottom: 50px; }
+
+/* Grid Cards */
+.services-grid, .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card, .t-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.service-card:hover { border-color: var(--gold); transform: translateY(-10px); }
+.service-card i { font-size: 50px; color: var(--gold); margin-bottom: 20px; }
+
+/* Video */
+.video-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    border: 2px solid #333;
+}
+video { width: 100%; display: block; }
+
+/* WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 2000;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+footer { text-align: center; padding: 40px; background: #000; color: #555; }
