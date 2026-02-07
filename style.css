@@ -32,6 +32,13 @@ nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 
 
 .btn-primary { background: var(--gold); color: #000; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 10px; display: inline-block; }
 .btn-secondary { border: 1px solid var(--gold); color: var(--gold); padding: 12px 25px; border-radius: 8px; text-decoration: none; margin: 10px; display: inline-block; }
+.site-footer { 
+    padding: 30px 0; 
+    text-align: center; 
+    border-top: 1px solid #ddd; 
+    width: 100%;
+    margin-top: 40px;
+}
 
 /* للموبايل */
 @media (max-width: 600px) {
