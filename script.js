@@ -1,21 +1,11 @@
-// تأثير ظهور العناصر عند التمرير (Smooth Scroll)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// تغيير خلفية الهيدر عند النزول للأسفل
+// تأثير بسيط عند التمرير
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.style.background = 'rgba(0, 0, 0, 0.95)';
-        header.style.padding = '10px 5%';
+    if (window.scrollY > 100) {
+        header.style.padding = '10px 8%';
+        header.style.background = 'rgba(13, 13, 13, 0.95)';
     } else {
-        header.style.background = 'rgba(0, 0, 0, 0.8)';
-        header.style.padding = '15px 5%';
+        header.style.padding = '20px 8%';
+        header.style.background = 'rgba(13, 13, 13, 0.8)';
     }
 });
