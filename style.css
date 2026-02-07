@@ -39,7 +39,9 @@ nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 
     width: 100%;
     margin-top: 40px;
 }
-
+.footer-icons { margin-bottom: 10px; }
+.footer-icons a { color: var(--gold) !important; font-size: 22px; margin: 0 10px; transition: 0.3s; }
+.footer-icons a:hover { color: var(--gold) !important; }
 /* للموبايل */
 @media (max-width: 600px) {
     header { padding: 0 3%; }
