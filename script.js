@@ -1,4 +1,4 @@
-// تغيير خلفية الهيدر عند التمرير فقط
+// تغيير شكل الهيدر عند السكرول
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
