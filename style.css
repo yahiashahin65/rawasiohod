@@ -2,108 +2,55 @@
     --gold: #D4AF37;
     --dark: #0D0D0D;
     --card-bg: #1a1a1a;
+    --glass: rgba(255, 255, 255, 0.05);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
 body { background: var(--dark); color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
 
-/* الهيدر */
+/* الهيدر المطور (تأثير الزجاج) */
 header {
     position: fixed; top: 0; width: 100%; height: 80px;
     display: flex; justify-content: space-between; align-items: center;
-    padding: 0 5%; background: rgba(0, 0, 0, 0.95); z-index: 1000;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 0 5%; background: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(10px); z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
-header .logo { display: flex; align-items: center; gap: 10px; }
-header .logo img { height: 50px; width: auto; object-fit: contain; }
-.logo-text { font-size: 22px; font-weight: 900; color: #fff; }
-.gold-dot { color: var(--gold); }
+header .logo { display: flex; align-items: center; gap: 15px; }
+header .logo img { height: 55px; width: auto; }
 
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 15px; transition: 0.3s; }
-nav ul li a:hover { color: var(--gold); }
-
-/* الهيرو */
-.hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
-.hero-bg img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: -1; }
-.hero-content h1 { font-size: clamp(2rem, 6vw, 4rem); margin-bottom: 20px; font-weight: 900; }
-.highlight { color: var(--gold); }
-.hero-content p { font-size: 1.2rem; margin-bottom: 30px; color: #ddd; }
-
-/* المعرض والفيديو */
-.portfolio { padding: 100px 0; }
-.section-label { text-align: center; color: var(--gold); margin-bottom: 50px; font-size: 2.5rem; font-weight: 900; }
-.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 0 5%; }
-.gallery-item img { width: 100%; border-radius: 15px; border: 1px solid #333; transition: 0.4s; }
-.gallery-item:hover img { transform: translateY(-10px); border-color: var(--gold); }
-
-/* تنسيق حاوية الفيديو المحسن */
-.video-container { 
-    margin: 60px auto; 
-    max-width: 900px; /* العرض الأقصى للفيديو في الشاشات الكبيرة */
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
+/* قسم الخامات */
+.materials-section { padding: 80px 5%; background: #0a0a0a; }
+.materials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.material-card { 
+    background: var(--card-bg); border-radius: 15px; overflow: hidden; 
+    border: 1px solid #222; transition: 0.4s; text-align: center;
+    padding-bottom: 20px;
 }
+.material-card:hover { border-color: var(--gold); transform: translateY(-10px); }
+.mat-img img { width: 100%; height: 200px; object-fit: cover; }
+.material-card h3 { margin: 15px 0; color: var(--gold); }
+.material-card p { font-size: 0.9rem; color: #ccc; padding: 0 10px; }
 
+/* الإحصائيات */
+.stats { display: flex; justify-content: space-around; padding: 60px 5%; background: var(--gold); color: #000; text-align: center; }
+.stat-item .num { font-size: 2.5rem; font-weight: 900; display: block; }
+.stat-item p { font-weight: bold; }
+
+/* الفيديو */
 .video-container video { 
-    width: 100%; 
-    height: auto; /* يضمن عدم تمدد الفيديو بشكل طولي */
-    aspect-ratio: 16 / 9; /* يحافظ على أبعاد السينما للفيديو ومنع تشوهه */
-    border-radius: 20px; 
-    border: 2px solid var(--gold); 
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
-    background-color: #000; /* خلفية سوداء للفيديو أثناء التحميل */
-    object-fit: cover; /* لضمان ملء المساحة بدون حواف سوداء داخلية إذا أمكن */
+    width: 100%; max-width: 900px; border-radius: 20px; 
+    border: 2px solid var(--gold); box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
-/* تعديل خاص للشاشات الكبيرة جداً */
-@media (min-width: 1200px) {
-    .video-container {
-        max-width: 1000px;
-    }
-}
-
-/* تعديل للموبايل لضمان عدم وجود مسافات كبيرة */
-@media (max-width: 768px) {
-    .video-container {
-        margin: 30px auto;
-    }
-    .video-container video {
-        border-radius: 12px;
-    }
-}
-
-/* الخدمات */
-.services { padding: 100px 0; background: #080808; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 0 5%; }
-.service-card { background: var(--card-bg); padding: 40px 20px; border-radius: 20px; text-align: center; transition: 0.4s; border: 1px solid #222; }
-.service-card:hover { transform: scale(1.05); border-color: var(--gold); }
-.service-card i { font-size: 45px; color: var(--gold); margin-bottom: 20px; }
-.service-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
-.service-card p { color: #aaa; line-height: 1.6; }
-
-/* الأزرار */
-.btn-primary { background: var(--gold); color: #000; padding: 14px 30px; border-radius: 10px; text-decoration: none; font-weight: 900; margin: 10px; display: inline-block; transition: 0.3s; }
-.btn-primary:hover { background: #fff; transform: translateY(-3px); }
-.btn-secondary { border: 2px solid var(--gold); color: var(--gold); padding: 12px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; margin: 10px; display: inline-block; transition: 0.3s; }
+/* الأزرار المطورة */
+.btn-primary { background: linear-gradient(45deg, var(--gold), #f2d06b); color: #000; border: none; }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
 .btn-secondary:hover { background: var(--gold); color: #000; }
 
-/* الفوتر */
-.site-footer { padding: 50px 0; text-align: center; border-top: 1px solid #222; margin-top: 60px; background: #000; }
-.footer-icons { margin-bottom: 20px; }
-.footer-icons a { color: var(--gold); font-size: 26px; margin: 0 15px; transition: 0.3s; }
-.footer-icons a:hover { transform: scale(1.2); display: inline-block; }
-
-/* واتساب طاير */
-.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 5000; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); }
-
-/* للموبايل */
-@media (max-width: 600px) {
-    header { height: 70px; }
-    .logo-text { font-size: 18px; }
-    nav ul { gap: 12px; }
-    nav ul li a { font-size: 13px; }
-    .hero-content h1 { font-size: 2.2rem; }
+/* التوافق مع الجوال */
+@media (max-width: 768px) {
+    .stats { flex-direction: column; gap: 30px; }
+    header .logo-text { display: none; } /* إخفاء النص في الجوال والاكتفاء بالشعار */
 }
