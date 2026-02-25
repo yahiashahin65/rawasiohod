@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رواسي أحد</title>
+    <title>رواسي أحد | للديكور والحلول الإعلانية</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo">
+            <img src="logo.png" alt="رواسي أحد">
             <span class="logo-text">رواسي <span class="gold-dot">أحد</span></span>
         </div>
         <nav>
             <ul>
                 <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#materials">الخامات</a></li>
                 <li><a href="#portfolio">المعرض</a></li>
                 <li><a href="#services">الخدمات</a></li>
             </ul>
@@ -27,54 +30,68 @@
         <div class="hero-bg">
             <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000" alt="Interior">
         </div>
-        <div class="hero-content">
+        <div class="hero-content" data-aos="zoom-in">
             <h1>نصمم <span class="highlight">المستقبل</span> برؤية فنية</h1>
-            <p>وكالة رائدة في الديكورات العصرية والحلول الإعلانية المبتكرة</p>
+            <p>خبراء الديكور العصري، بديل الخشب، الشيبورد، والحلول الإعلانية</p>
             <div class="hero-btns">
                 <a href="#portfolio" class="btn-primary">مشاهدة الأعمال</a>
-                <a href="https://wa.me/966579477339" class="btn-secondary">تواصل معنا</a>
+                <a href="https://wa.me/966579477339" class="btn-secondary">طلب استشارة مجانية</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="materials" class="materials-section">
+        <div class="container">
+            <h2 class="section-label" data-aos="fade-up">خاماتنا المتميزة</h2>
+            <div class="materials-grid">
+                <div class="material-card" data-aos="flip-left">
+                    <div class="mat-img"><img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=500" alt="بديل خشب"></div>
+                    <h3>بديل الخشب (WPC)</h3>
+                    <p>مقاوم للرطوبة وبتصاميم تحاكي الطبيعة.</p>
+                </div>
+                <div class="material-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="mat-img"><img src="https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=500" alt="شيبورد"></div>
+                    <h3>ألواح الشيبورد</h3>
+                    <p>متانة عالية وألوان عصرية تناسب جميع الأثاث.</p>
+                </div>
+                <div class="material-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="mat-img"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=500" alt="بديل رخام"></div>
+                    <h3>بديل الرخام</h3>
+                    <p>فخامة الرخام بوزن خفيف وسهولة في التركيب.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-label">معرض الصور</h2>
+            <h2 class="section-label" data-aos="fade-up">معرض الصور</h2>
             <div class="gallery">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800"></div>
+                <div class="gallery-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800"></div>
             </div>
             
-            <div class="video-container">
-                <video controls>
+            <div class="video-container" data-aos="zoom-in">
+                <video controls poster="thumb.jpg">
                     <source src="videos/work.mp4" type="video/mp4">
-                    متصفحك لا يدعم تشغيل الفيديو.
                 </video>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-label">خدماتنا</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-paint-roller"></i>
-                    <h3>ديكورات داخلية</h3>
-                    <p>تصميمات عصرية تناسب ذوقك الرفيع.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-ad"></i>
-                    <h3>دعاية وإعلان</h3>
-                    <p>حلول تسويقية بصرية متكاملة.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>حلول إبداعية</h3>
-                    <p>نبتكر لك ما يميز هويتك التجارية.</p>
-                </div>
-            </div>
+    <section class="stats">
+        <div class="stat-item" data-aos="fade-up">
+            <span class="num">+500</span>
+            <p>مشروع منجز</p>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <span class="num">+10</span>
+            <p>سنوات خبرة</p>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <span class="num">100%</span>
+            <p>رضا العملاء</p>
         </div>
     </section>
 
@@ -91,6 +108,7 @@
         <p>جميع الحقوق محفوظة لـ رواسي أحد © 2026</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
