@@ -1,112 +1,52 @@
 :root {
     --gold: #D4AF37;
-    --black: #0D0D0D;
-    --gray: #1a1a1a;
+    --dark: #0D0D0D;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Cairo', sans-serif; }
-body { background: var(--black); color: #fff; overflow-x: hidden; text-align: right; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+body { background: var(--dark); color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
 
-/* الهيدر المتجاوب */
 header {
-    background: rgba(0,0,0,0.9);
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--gold);
+    position: fixed; top: 0; width: 100%; height: 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 5%; background: rgba(0, 0, 0, 0.9); z-index: 1000;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
+header .logo { display: flex; align-items: center; gap: 10px; }
+header .logo img { height: 55px; width: auto; object-fit: contain; }
+.logo-text { font-size: 20px; font-weight: 900; color: #fff; }
+.gold-dot { color: var(--gold); }
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 14px; }
+
+.hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
+.hero-bg img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: -1; }
+.hero-content h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; }
+.highlight { color: var(--gold); }
+
+.portfolio { padding: 80px 0; }
+.section-label { text-align: center; color: var(--gold); margin-bottom: 40px; font-size: 2rem; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 5%; }
+.gallery-item img { width: 100%; border-radius: 15px; border: 1px solid #333; }
+
+.btn-primary { background: var(--gold); color: #000; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 10px; display: inline-block; }
+.btn-secondary { border: 1px solid var(--gold); color: var(--gold); padding: 12px 25px; border-radius: 8px; text-decoration: none; margin: 10px; display: inline-block; }
+.site-footer { 
+    padding: 30px 0; 
+    text-align: center; 
+    border-top: 1px solid #ddd; 
+    width: 100%;
+    margin-top: 40px;
 }
-
-.logo img { height: 50px; width: auto; }
-
-nav ul { display: flex; list-style: none; gap: 15px; }
-nav ul li a { color: #fff; text-decoration: none; font-size: 14px; font-weight: bold; }
-
-/* الهيرو */
-.hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1500') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero h1 { font-size: 3rem; margin-bottom: 10px; }
-.gold { color: var(--gold); }
-
-/* الجريد المتجاوب (مهم جداً للفون) */
-.section-padding { padding: 60px 5%; }
-.title { text-align: center; color: var(--gold); margin-bottom: 40px; font-size: 2rem; }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: var(--gray);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid #333;
-}
-
-.card img { width: 100%; height: 200px; object-fit: cover; }
-.card-text { padding: 20px; text-align: center; }
-.card-text h3 { color: var(--gold); margin-bottom: 10px; }
-
-/* المعرض */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.gallery-item img { width: 100%; border-radius: 10px; }
-
-/* زر الواتساب */
-.whatsapp-fixed {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: #fff;
-    z-index: 9999;
-}
-
-.btn-gold {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--gold);
-    color: #000;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-footer { text-align: center; padding: 30px; background: #000; border-top: 1px solid #222; }
-
-/* تعديلات الجوال الصغير جداً */
-@media (max-width: 480px) {
-    .hero h1 { font-size: 2rem; }
-    .header-container { flex-direction: column; gap: 10px; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .logo img { height: 40px; }
+.footer-icons { margin-bottom: 10px; }
+.footer-icons a { color: var(--gold) !important; font-size: 22px; margin: 0 10px; transition: 0.3s; }
+.footer-icons a:hover { color: var(--gold) !important; }
+/* للموبايل */
+@media (max-width: 600px) {
+    header { padding: 0 3%; }
+    header .logo img { height: 45px; }
+    .logo-text { font-size: 16px; }
+    nav ul { gap: 10px; }
+    nav ul li a { font-size: 12px; }
 }
