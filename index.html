@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رواسي أحد | للديكور</title>
+    <title>رواسي أحد</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,73 +11,86 @@
 <body>
 
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="logo.png" alt="رواسي أحد">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#materials">الخامات</a></li>
-                    <li><a href="#portfolio">المعرض</a></li>
-                    <li><a href="https://wa.me/966579477339">اتصل بنا</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <span class="logo-text">رواسي <span class="gold-dot">أحد</span></span>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#portfolio">المعرض</a></li>
+                <li><a href="#services">الخدمات</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000" alt="Interior">
+        </div>
         <div class="hero-content">
-            <h1>رواسي <span class="gold">أحد</span></h1>
-            <p>خبراء الديكور العصرية والحلول الإبداعية</p>
-            <a href="https://wa.me/966579477339" class="btn-gold">تواصل واتساب</a>
+            <h1>نصمم <span class="highlight">المستقبل</span> برؤية فنية</h1>
+            <p>وكالة رائدة في الديكورات العصرية والحلول الإعلانية المبتكرة</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn-primary">مشاهدة الأعمال</a>
+                <a href="https://wa.me/966579477339" class="btn-secondary">تواصل معنا</a>
+            </div>
         </div>
     </section>
 
-    <section id="materials" class="section-padding">
-        <h2 class="title">خاماتنا المتميزة</h2>
-        <div class="grid-container">
-            <div class="card">
-                <img src="[attachment_2](attachment)" alt="بديل خشب">
-                <div class="card-text">
-                    <h3>بديل الخشب (WPC)</h3>
-                    <p>شرائح طولية بتصاميم عصرية وملمس طبيعي</p>
-                </div>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-label">معرض الصور</h2>
+            <div class="gallery">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800"></div>
             </div>
             
-            <div class="card">
-                <img src="[attachment_4](attachment)" alt="بديل رخام">
-                <div class="card-text">
-                    <h3>بديل الرخام (PVC)</h3>
-                    <p>ألواح فاخرة تعطي لمعان الرخام الحقيقي بوزن أخف</p>
-                </div>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/work.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
             </div>
+        </div>
+    </section>
 
-            <div class="card">
-                <img src="[attachment_0](attachment)" alt="ديكور جداري">
-                <div class="card-text">
-                    <h3>ديكورات جدارية</h3>
-                    <p>دمج إبداعي بين الخشب والرخام مع الإضاءة</p>
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-label">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-paint-roller"></i>
+                    <h3>ديكورات داخلية</h3>
+                    <p>تصميمات عصرية تناسب ذوقك الرفيع.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-ad"></i>
+                    <h3>دعاية وإعلان</h3>
+                    <p>حلول تسويقية بصرية متكاملة.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>حلول إبداعية</h3>
+                    <p>نبتكر لك ما يميز هويتك التجارية.</p>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <section id="portfolio" class="section-padding dark-bg">
-        <h2 class="title">معرض الأعمال</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800"></div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/966579477339" class="whatsapp-fixed">
+    <a href="https://wa.me/966579477339" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer>
-        <p>جميع الحقوق محفوظة لرواسي أحد © 2026</p>
+    <footer class="site-footer">
+        <div class="footer-icons">
+            <a href="https://tiktok.com/@rawasi_ohud" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/966579477339" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/rawasi_ohod" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>جميع الحقوق محفوظة لـ رواسي أحد © 2026</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
