@@ -50,3 +50,19 @@ nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 
     nav ul { gap: 10px; }
     nav ul li a { font-size: 12px; }
 }
+/* إضافة لمسة فخامة لكروت الخدمات */
+.service-card {
+    border-top: 3px solid var(--gold); /* خط ذهبي بالأعلى يعطي شكل رسمي */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* تحسين شكل الهيدر في الجوال */
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    nav ul { margin-top: 10px; }
+}
