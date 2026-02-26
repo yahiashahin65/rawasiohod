@@ -89,3 +89,108 @@ nav ul li a:hover { color: var(--gold); }
     .section-label { font-size: 1.8rem; }
     .materials-section, .portfolio, .services { padding: 60px 5%; }
 }
+
+/* حافظ على الكود القديم وأضف/عدل التالي */
+
+:root {
+    --gold: #D4AF37;
+    --dark: #0D0D0D;
+    --card-bg: #1a1a1a;
+    --gold-gradient: linear-gradient(45deg, #D4AF37, #f1d57e);
+}
+
+/* السلايدر - الدلع الجديد */
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px; /* سيتغير تلقائياً حسب الشاشة */
+    height: 400px;
+    filter: blur(1px) grayscale(20%);
+    transition: 0.5s;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.swiper-slide-active {
+    filter: blur(0) grayscale(0);
+    transform: scale(1.1);
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    z-index: 2;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* أزرار السلايدر */
+.swiper-button-next, .swiper-button-prev { color: var(--gold) !important; }
+.swiper-pagination-bullet-active { background: var(--gold) !important; }
+
+/* فيديو اليوتيوب */
+.video-placeholder {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+.play-button {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 70px; color: var(--gold); transition: 0.3s;
+}
+.video-placeholder:hover .play-button { transform: translate(-50%, -50%) scale(1.2); }
+
+/* أنيميشن بسيط للنصوص */
+.hero-content h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* تنسيق سكشن الفيديو */
+.video-placeholder {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    border: 2px solid var(--gold);
+}
+
+.video-placeholder img {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.video-placeholder:hover img {
+    opacity: 0.9;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: var(--gold);
+    z-index: 10;
+    pointer-events: none; /* عشان الضغطة تروح للـ div الأب */
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
